@@ -1,0 +1,19 @@
+.sem-fundo {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.bg-cortico{
+    background: url(../Img/01_Layout_Final.png) top left no-repeat;
+    width: 1920px;
+    height: 1080px;
+}
+
+.btn-personagem {
+	width: 192px;
+}
+
+.btn-resumo {
+	width: 219px;
+}
+
