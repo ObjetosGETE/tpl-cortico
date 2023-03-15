@@ -1,3 +1,31 @@
+function resizeBodyGlossario() {
+  var largura = 1920;
+  var altura = 1080;
+
+  var larguraScreen = $(window).width();
+  var alturaScreen = $(window).height();
+  var proporcaoAltura = (alturaScreen * 100) / altura;
+  var proporcaoLargura = (larguraScreen * 100) / largura;
+  var proporcao, larguraAltura, larguraAlturaAuto;
+
+  
+  if(proporcaoAltura < proporcaoLargura){
+    larguraAltura = "height";
+    larguraAlturaAuto = "width";
+    proporcao = proporcaoAltura / 100;
+  }else{
+    larguraAltura = "width";
+    larguraAlturaAuto = "height";
+    proporcao = proporcaoLargura / 100;
+  }
+  console.log(proporcao, proporcaoAltura, proporcaoLargura)
+  $(".conteudo-glossario").css({
+    "transform": "scale("+proporcao+")",
+    "transform-origin": "center center"
+  });
+}
+
+
 const personagens = {
     personagem1: {
         classPersonagem: "",

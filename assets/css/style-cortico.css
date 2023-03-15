@@ -1,19 +1,220 @@
-.sem-fundo {
-    background-color: transparent !important;
-    border: none !important;
+/****************************************************************************/
+/******************************* Estilo capa *******************************/
+/**************************************************************************/
+html, body{
+    height: 100%;
+
 }
 
-.bg-cortico{
-    background: url(../Img/01_Layout_Final.png) top left no-repeat;
+
+.btn.btn-lg.btn-capa {
+    background-color: #8786b0;
+    border: 3px solid #000000;
+    border-radius: 32px;
+    width: 50%;
+    font-size: 205%;
+    color: #293653;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 5px 3px 8px -1px rgb(70, 70, 70);
+}
+
+.btn.btn-lg.btn-capa:hover {
+    transform: scale(1.1);
+}
+
+.p-capa {
+    font-size: 20px;
+    color: #333;
+}
+
+/**************************************************************************/
+/***************************** Estilo lupas ******************************/
+/************************************************************************/
+.sem-fundo {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.lupa1 {
+    left: 15%;
+    top: 15%;
+    width: 9%;
+}
+
+.lupa2 {
+    right: 15%;
+    top: 15%;
+    width: 9%;
+}
+
+.lupa3 {
+    left: 15%;
+    bottom: 15%;
+    width: 9%;
+}
+
+.lupa4 {
+    right: 15%;
+    bottom: 15%;
+    width: 9%;
+}
+
+/****************************************************************************/
+/***************************** Estilo menu *******************************/
+/**************************************************************************/
+
+.btn-menu.sem-fundo.position-absolute.botao-animado {
+    top: 10px;
+    left: 20px;
+  }
+
+.modal-header.menuzinho {
+    background-color: #374568;
+    color: white;
+    text-transform: uppercase;
+}
+
+.estilo-menu {
+    text-align: left !important;
+    background-color: #8786b0 !important;
+    border: 2px solid black !important;
+}
+
+/****************************************************************************/
+/***************************** Estilo botões *******************************/
+/**************************************************************************/
+
+.popover-header {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn-voltar-glosario {
+    width: 100%;
+    max-width: 150px;
+    top: 10px;
+    right: 10px;
+}
+
+.btn-ampliar {
+    transition: transform 0.2s ease-in-out;
+}
+
+.btn-ampliar:hover {
+    transform: scale(1.5);
+}
+
+.numero {
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    color: #415583;
+    font-size: 20px;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    box-shadow: -5px 2px 6px -1px rgb(0, 0, 9);
+    padding: 0;
+}
+
+.botao-animado {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/**************************************************************************/
+/***************************** vire o celular ****************************/
+/************************************************************************/
+
+.p-paisagem {
+    color: white;
+    text-align: center;
+}
+
+.img-paisagem {
+    max-width: 70% !important;
+    height: auto;
+    display: block;
+}
+
+@media only screen and (orientation: portrait) {
+    .modo-smart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #7c88e7;
+        z-index: 9999999999999999999;
+    }
+}
+
+@media (max-width: 991px) {
+    .btn-voltar-glosario {
+        max-width: 200px;
+        top: 5px;
+        right: 5px;
+    }
+    .numero {
+        font-size: 30px;
+        width: 70px;
+        height: 70px;
+    }
+    .btn-menu > img,
+    .btn-voltar-glosario > img {
+        width: 200px !important;
+    }
+
+}
+
+@media (min-width: 480px) {
+    .modo-smart {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    
+}
+body{
+    overflow: hidden;
+    background-color: #333 !important;
+    position: relative;
+}
+.conteudo-glossario{
+    width: 1920px;
+    height: 1080px;
+    position: fixed;
+    left: calc(50% - 1920px / 2);
+    top: calc(50% - 1080px / 2);
+    margin: auto;
+}
+
+ #quadrante-03{
     width: 1920px;
     height: 1080px;
 }
-
-.btn-personagem {
-	width: 192px;
-}
-
-.btn-resumo {
-	width: 219px;
-}
-
+/****************************************************************************************/
+/***************************** Posição números quadrante 1 *****************************/
+/**************************************************************************************/

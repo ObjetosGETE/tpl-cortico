@@ -4,25 +4,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style-cortico.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style-cortico.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <title>O Cortiço</title>
+    <title>Glossário</title>
 </head>
-<body>  
-    <div class="container-cortico">
+<body class="body-glossario">
+  <div class="position-absolute text-center capa">
+      <img src="/assets/Img/bg-glossario.png" class="img-capa" alt="Backgroud pagina inicial, elementos da produção cultural">
+      <div class="modal fade" id="modal-capa-glossario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <p class="p-capa">Olá, estudante! <br> Bem-vindo ao glossário de termos do nosso conteúdo de produção cultural. Aqui, você verá os mais usados e importantes termos, nomes e nomenclaturas utilizados no mundo do trabalho em produção cultural. Bons estudos!</p>
+              <button type="button" class="btn btn-lg btn-capa">
+                Iniciar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="conteudo-glossario">
+    <section class="glossario-responsivo position-absolute" id="quadrante-03">
+      <div><img src="/assets/Img/01_Layout_Final.png" class="img-fluid" alt="Zoom no backgroud inicial quadrante 03"></div>
+      <button type="button" class="btn-menu sem-fundo position-absolute botao-animado" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <img class="img-fluid" src="/assets/Img/04_botao_Personagens.png" alt="Botão para voltar na tela inicial">
+      </button>
+      <div> 
+        <button class="btn-voltar-glosario sem-fundo position-absolute botao-animado"><img class="img-fluid" src="/assets/Img/03_botao_Resumo_da_Obra.png" alt="Botão para voltar na tela inicial" data-bs-toggle="modal" data-bs-target="#modalObra"></button>
+        <button type="button" class="numero position-absolute btn-ampliar" id="personagem1">13</button> 
+        <button type="button" class="numero position-absolute btn-ampliar" id="personagem2">20</button>
+        <button type="button" class="numero position-absolute btn-ampliar" id="personagem3">21</button>
+        <button type="button" class="numero position-absolute btn-ampliar" id="personagem4">29</button>
+        <button type="button" class="numero position-absolute btn-ampliar" id="personagem5">30</button>
+        <button type="button" class="numero position-absolute btn-ampliar" id="personagem6">31</button>
+        <button type="button" class="numero position-absolute btn-ampliar" id="personagem7">31</button>
+        <button type="button" class="numero position-absolute btn-ampliar" id="personagem8">31</button>
+    </div> 
+    </section>        
+  </div>
+  <div class="modo-smart">
+    <div class="text-center">
+      
+      <p class="p-paisagem text-center"><img src="/assets/Img/vire.gif" class="img-fluid img-paisagem d-inline-block" ><br><strong>Por favor, gire o aparelho para o modo paisagem.</strong></p>
+    </div>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script src="/assets/js/script-cortico.js"></script>
+</body>
+</html>
+
+    <!-- <div class="container-cortico">
         <div id="modal-cortico"></div>
     <div class="bg-cortico">
+        <img src="./assets/img/03_botao_Resumo_da_Obra.png" class="img-fluid" alt="Botão resumo da obra">
         <div class="botoes-cortico">
             <button class="sem-fundo"><img src="./assets/img/04_botao_Personagens.png" class="btn-personagem" alt="Botão personagem"></button>
             <button class="sem-fundo"><img src="./assets/img/03_botao_Resumo_da_Obra.png" class="btn-resumo" alt="Botão resumo da obra"></button>
         </div>
     </div>
     <div class="botoes-personagens">
-
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="./assets/js/script-cortico.js"></script>
-</body>
-</html>
+        <button class="estilo-btn position-absolute btn-ampliar" id="personagem1"><i class="fa-regular fa-book-user"></i></button>
+        <button class="estilo-btn position-absolute btn-ampliar" id="personagem2"><i class="fa-regular fa-book-user"></i></button>
+        <button class="estilo-btn position-absolute btn-ampliar" id="personagem3"><i class="fa-regular fa-book-user"></i></button>
+        <button class="estilo-btn position-absolute btn-ampliar" id="personagem4"><i class="fa-regular fa-book-user"></i></button>
+        <button class="estilo-btn position-absolute btn-ampliar" id="personagem5"><i class="fa-regular fa-book-user"></i></button>
+        <button class="estilo-btn position-absolute btn-ampliar" id="personagem6"><i class="fa-regular fa-book-user"></i></button>
+        <button class="estilo-btn position-absolute btn-ampliar" id="personagem7"><i class="fa-regular fa-book-user"></i></button>
+        <button class="estilo-btn position-absolute btn-ampliar" id="personagem8"><i class="fa-regular fa-book-user"></i></button>
+    </div> -->
