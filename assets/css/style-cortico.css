@@ -1,16 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
+:root {
+    --fonte: Indie Flower, cursive !important;
+    --sombrinha: black 0.1em 0.1em 0.2em;
+    --cor-fonte-cabecalho: #302200 !important;
+    --estilo-borda: 2px solid black !important;
+    --cor-body: #333 !important;
+    --cor-h2-personagem: #ffffff;
+    --cor-bg-resumo-cabecalho: #e1ba3b !important;
+    --cor-bg-resumo-body: #e8d59b;
+    --cor-h1-menu: #ffffff;
+    --cor-bg-menu-cabecalho: #996c69;
+    --cor-bg-menu-body: #fff1ea !important;
+    --cor-bg-menu-tabela: #d99e7f !important;
+    --cor-bg-hover-menu: #996c69 !important;
+}
 
+/********************************************************************************/
+/********************************* estilo geral ********************************/
+/******************************************************************************/
 
+.body-cortico {
+    overflow: hidden;
+    background-color: var(--cor-body);
+    position: relative;
+}
 
-/****** ATENÇÃO!! ORGANIZE ESSA BAGUNÇA!!!
-CRIE VARIAVEIS PARA ENSERIR CORES E FONTES **********/
-
-
-.sem-fundo {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+.conteudo-cortico {
+    width: 1920px;
+    height: 1080px;
+    position: fixed;
+    left: calc(50% - 1920px / 2);
+    top: calc(50% - 1080px / 2);
+    margin: auto;
 }
 
 #audio {
@@ -18,55 +40,14 @@ CRIE VARIAVEIS PARA ENSERIR CORES E FONTES **********/
     height: 50px;
 }
 
-.logo-corico {
-    top: 35px;
-    left: 145px;
+.sem-fundo {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
-.modal-header.menuzinho {
-    background-color: #996c69;
-    color: white;
-    text-transform: uppercase;
-}
-
-.estilo-menu {
-    text-align: left !important;
-    background-color: #d99e7f !important;
-    border: 2px solid black !important;
-    width: 299%;
-    font-family: 'Indie Flower', cursive !important;
-}
-
-.estilo-menu:hover {
-    background-color: #996c69 !important;
-}
-
-.color-menu {
-    background-color: #fff1ea !important;
-    border-top: none !important;
-}
-
-.h1-personagens {
-    font-family: 'Indie Flower', cursive;
-    font-size: 45px;
-    color: white;
-    text-shadow: black 0.1em 0.1em 0.2em
-}
-
-/****************************************************************************/
-/***************************** Estilo botões *******************************/
-/**************************************************************************/
-
-.btn-menu {
-    width: 10%;
-    top: 20px;
-    left: 1247px;
-}
-
-.resumo {
-    width: 12%;
-    top: 10px;
-    left: 1451px;
+.efeito-logo {
+    opacity: 0;
 }
 
 .btn-ampliar {
@@ -77,6 +58,15 @@ CRIE VARIAVEIS PARA ENSERIR CORES E FONTES **********/
     transform: scale(1.5);
 }
 
+/***************************************************************************************/
+/********************************* estilo tela inicial ********************************/
+/*************************************************************************************/
+
+.logo-cortico {
+	top: 118px;
+	left: 145px;
+}
+
 .personagem {
     background-color: white;
     border: none;
@@ -85,8 +75,28 @@ CRIE VARIAVEIS PARA ENSERIR CORES E FONTES **********/
     font-weight: bold;
     width: 30px;
     height: 30px;
-    box-shadow: -5px 2px 6px -1px rgb(0, 0, 9);
+    box-shadow: var(--sombrinha);
     padding: 0;
+}
+
+
+/*****************************************************************************************/
+/********************************* estilo modal CAPA ************************************/
+/***************************************************************************************/
+
+#logo-capa {
+    padding: 66px;
+}
+
+.tamanho-capa {
+    width: 896px;
+    height: 573px;
+}
+
+.btn-capa {
+    width: 169px;
+    top: 57%;
+    left: 41%;
 }
 
 .botao-animado {
@@ -107,64 +117,154 @@ CRIE VARIAVEIS PARA ENSERIR CORES E FONTES **********/
     }
 }
 
-/**************************************************************************/
-/***************************** vire o celular ****************************/
-/************************************************************************/
+/*****************************************************************************************/
+/********************************* estilo modal Resumo **********************************/
+/***************************************************************************************/
 
-.p-paisagem {
-    color: white;
-    text-align: center;
+.p-descricao {
+    font-family: var(--fonte);
+    font-size: 30px;
 }
 
-.img-paisagem {
-    max-width: 70% !important;
-    height: auto;
-    display: block;
+.cor-text {
+    color: var(--cor-fonte-cabecalho);
 }
 
-@media only screen and (orientation: portrait) {
-    .modo-smart {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-        margin: auto;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #7c88e7;
-        z-index: 9999999999999999999;
-    }
+.cor-bg {
+    background-color: var(--cor-bg-resumo-body);
 }
 
-@media (max-width: 991px) {
-    .personagem {
-        font-size: 30px;
-        width: 70px;
-        height: 70px;
-    }
+.resumo {
+    width: 12%;
+    top: 70px;
+    left: 1689px;
 }
 
-@media (min-width: 480px) {
-    .modo-smart {
-        display: none;
-    }
+.title-resumo {
+    font-family: var(--fonte);
+    background-color: var(--cor-bg-resumo-cabecalho);
+    color: var(--cor-fonte-cabecalho);
 }
 
-@media (max-width: 767px) {}
-
-body {
-    overflow: hidden;
-    background-color: #333 !important;
-    position: relative;
+.fecha-resumo {
+    width: 60px;
 }
 
+/****************************************************************************************/
+/********************************* estilo modal Menu ***********************************/
+/**************************************************************************************/
 
-/*****************************************************************************/
-/***************************** botões personagens ***************************/
-/***************************************************************************/
+.btn-menu {
+    width: 10%;
+    top: 81px;
+    left: 1490px;
+}
+
+.modal-header.menuzinho {
+    background-color: var(--cor-bg-menu-cabecalho);
+    color: var(--cor-h1-menu);
+    text-transform: uppercase;
+}
+
+.estilo-menu {
+    text-align: left !important;
+    background-color: var(--cor-bg-menu-tabela) !important;
+    border: var(--estilo-borda) !important;
+    width: 299%;
+    font-family: var(--fonte) !important;
+}
+
+.estilo-menu:hover {
+    background-color: var(--cor-bg-hover-menu) !important;
+}
+
+.color-menu {
+    background-color: var(--cor-bg-menu-body) !important;
+    border-top: none !important;
+}
+
+.h1-personagens {
+    font-family: var(--fonte);
+    font-size: 45px;
+    color: var(--cor-h1-menu);
+    text-shadow: var(--sombrinha);
+}
+
+/****************************************************************************************/
+/********************************* estilo modal personagem *****************************/
+/**************************************************************************************/
+
+.tamanho {
+    width: 900px;
+    height: 576px;
+}
+.fechar {
+    width: 68px;
+    left: 790px;
+    top: -353px;
+}
+
+.nome-personagem {
+    width: 302px;
+    height: 362px;
+    left: 524px;
+    top: 54px;
+}
+
+.h2-personagem {
+    font-family: var(--fonte);
+    font-size: 45px;
+    color: var(--cor-h2-personagem);
+    text-shadow: var(--sombrinha);
+}
+
+.descricao {
+    overflow: scroll;
+    width: 299px;
+    height: 362px;
+    left: 524px;
+    top: -287px;
+}
+
+.bg-introducao {
+    background: url(../Img/Modal_introducao.png) no-repeat;
+}
+
+.bg-marciana {
+    background: url(../Img/Marciana.png) no-repeat;
+}
+
+.bg-jeronimo {
+    background: url(../Img/Jeronimo.png) no-repeat;
+}
+
+.bg-paula {
+    background: url(../Img/Paula.png) no-repeat;
+}
+
+.bg-rita {
+    background: url(../Img/Rita_Baiana.png) no-repeat;
+}
+
+.bg-pombinha {
+    background: url(../Img/Pombinha.png) no-repeat;
+}
+
+.bg-joao {
+    background: url(../Img/Joao_Romao.png) no-repeat;
+}
+
+.bg-miranda {
+    background: url(../Img/Miranda.png) no-repeat;
+}
+
+.bg-bertoleza {
+    background: url(../Img/Bertoleza.png) no-repeat;
+}
+
+/************************************************************************************/
+/***************************** Posição botões personagens **************************/
+/**********************************************************************************/
 
 #personagem1 {
     top: 812px;
@@ -204,93 +304,4 @@ body {
 #personagem8 {
     top: 927px;
     left: 1345px;
-}
-
-/*****************************************************************************/
-/********************************* estilo modal *****************************/
-/***************************************************************************/
-
-.nome-personagem {
-    width: 302px;
-    height: 362px;
-    left: 524px;
-    top: 54px;
-}
-
-.h2-personagem {
-    font-family: 'Indie Flower', cursive;
-    font-size: 45px;
-    color: white;
-    text-shadow: black 0.1em 0.1em 0.2em
-}
-
-.descricao {
-    overflow: scroll;
-    width: 299px;
-    height: 362px;
-    left: 524px;
-    top: -287px;
-}
-
-.p-descricao {
-    font-family: 'Indie Flower', cursive;
-    /* color: #ffefea; */
-    font-size: 30px;
-}
-
-.tamanho {
-    width: 900px;
-    height: 576px;
-}
-
-.cor-bg {
-    background-color: #e8d59b;
-}
-
-.title-resumo {
-    font-family: 'Indie Flower', cursive;
-    background-color: #e1ba3b !important;
-    color: #302200;
-}
-
-.fechar {
-    width: 60px;
-    left: 790px;
-    top: -353px;
-}
-
-.fecha-resumo {
-    width: 60px;
-}
-
-.bg-marciana {
-    background: url(../Img/Marciana.png) no-repeat;
-}
-
-.bg-jeronimo {
-    background: url(../Img/Jeronimo.png) no-repeat;
-}
-
-.bg-paula {
-    background: url(../Img/Paula.png) no-repeat;
-}
-
-.bg-rita {
-    background: url(../Img/Rita_Baiana.png) no-repeat;
-}
-
-.bg-pombinha {
-    background: url(../Img/Pombinha.png) no-repeat;
-}
-
-.bg-joao {
-    background: url(../Img/Joao_Romao.png) no-repeat;
-}
-
-.bg-miranda {
-    background: url(../Img/Miranda.png) no-repeat;
-}
-
-.bg-bertoleza {
-    background: url(../Img/Bertoleza.png) no-repeat;
 }
