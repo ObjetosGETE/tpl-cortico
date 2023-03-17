@@ -1,101 +1,72 @@
-/****************************************************************************/
-/******************************* Estilo capa *******************************/
-/**************************************************************************/
-html, body{
-    height: 100%;
-
-}
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 
-.btn.btn-lg.btn-capa {
-    background-color: #8786b0;
-    border: 3px solid #000000;
-    border-radius: 32px;
-    width: 50%;
-    font-size: 205%;
-    color: #293653;
-    text-transform: uppercase;
-    font-weight: bold;
-    box-shadow: 5px 3px 8px -1px rgb(70, 70, 70);
-}
 
-.btn.btn-lg.btn-capa:hover {
-    transform: scale(1.1);
-}
 
-.p-capa {
-    font-size: 20px;
-    color: #333;
-}
+/****** ATENÇÃO!! ORGANIZE ESSA BAGUNÇA!!!
+CRIE VARIAVEIS PARA ENSERIR CORES E FONTES **********/
 
-/**************************************************************************/
-/***************************** Estilo lupas ******************************/
-/************************************************************************/
+
 .sem-fundo {
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
 
-.lupa1 {
-    left: 15%;
-    top: 15%;
-    width: 9%;
+#audio {
+    width: 100%;
+    height: 50px;
 }
 
-.lupa2 {
-    right: 15%;
-    top: 15%;
-    width: 9%;
+.logo-corico {
+    top: 35px;
+    left: 145px;
 }
-
-.lupa3 {
-    left: 15%;
-    bottom: 15%;
-    width: 9%;
-}
-
-.lupa4 {
-    right: 15%;
-    bottom: 15%;
-    width: 9%;
-}
-
-/****************************************************************************/
-/***************************** Estilo menu *******************************/
-/**************************************************************************/
-
-.btn-menu.sem-fundo.position-absolute.botao-animado {
-    top: 10px;
-    left: 20px;
-  }
 
 .modal-header.menuzinho {
-    background-color: #374568;
+    background-color: #996c69;
     color: white;
     text-transform: uppercase;
 }
 
 .estilo-menu {
     text-align: left !important;
-    background-color: #8786b0 !important;
+    background-color: #d99e7f !important;
     border: 2px solid black !important;
+    width: 299%;
+    font-family: 'Indie Flower', cursive !important;
+}
+
+.estilo-menu:hover {
+    background-color: #996c69 !important;
+}
+
+.color-menu {
+    background-color: #fff1ea !important;
+    border-top: none !important;
+}
+
+.h1-personagens {
+    font-family: 'Indie Flower', cursive;
+    font-size: 45px;
+    color: white;
+    text-shadow: black 0.1em 0.1em 0.2em
 }
 
 /****************************************************************************/
 /***************************** Estilo botões *******************************/
 /**************************************************************************/
 
-.popover-header {
-    font-weight: bold;
-    text-transform: uppercase;
+.btn-menu {
+    width: 10%;
+    top: 20px;
+    left: 1247px;
 }
 
-.btn-voltar-glosario {
-    width: 100%;
-    max-width: 150px;
+.resumo {
+    width: 12%;
     top: 10px;
-    right: 10px;
+    left: 1451px;
 }
 
 .btn-ampliar {
@@ -106,11 +77,10 @@ html, body{
     transform: scale(1.5);
 }
 
-.numero {
+.personagem {
     background-color: white;
     border: none;
     border-radius: 50%;
-    color: #415583;
     font-size: 20px;
     font-weight: bold;
     width: 30px;
@@ -159,7 +129,6 @@ html, body{
         justify-content: center;
         width: 100%;
         height: 100%;
-        position: fixed;
         margin: auto;
         top: 0;
         left: 0;
@@ -171,21 +140,11 @@ html, body{
 }
 
 @media (max-width: 991px) {
-    .btn-voltar-glosario {
-        max-width: 200px;
-        top: 5px;
-        right: 5px;
-    }
-    .numero {
+    .personagem {
         font-size: 30px;
         width: 70px;
         height: 70px;
     }
-    .btn-menu > img,
-    .btn-voltar-glosario > img {
-        width: 200px !important;
-    }
-
 }
 
 @media (min-width: 480px) {
@@ -194,27 +153,144 @@ html, body{
     }
 }
 
-@media (max-width: 767px) {
-    
-}
-body{
+@media (max-width: 767px) {}
+
+body {
     overflow: hidden;
     background-color: #333 !important;
     position: relative;
 }
-.conteudo-glossario{
-    width: 1920px;
-    height: 1080px;
-    position: fixed;
-    left: calc(50% - 1920px / 2);
-    top: calc(50% - 1080px / 2);
-    margin: auto;
+
+
+/*****************************************************************************/
+/***************************** botões personagens ***************************/
+/***************************************************************************/
+
+#personagem1 {
+    top: 812px;
+    left: 1532px;
 }
 
- #quadrante-03{
-    width: 1920px;
-    height: 1080px;
+#personagem2 {
+    top: 664px;
+    left: 47px;
 }
-/****************************************************************************************/
-/***************************** Posição números quadrante 1 *****************************/
-/**************************************************************************************/
+
+#personagem3 {
+    top: 639px;
+    left: 218px;
+}
+
+#personagem4 {
+    top: 947px;
+    left: 644px;
+}
+
+#personagem5 {
+    top: 884px;
+    left: 905px;
+}
+
+#personagem6 {
+    top: 964px;
+    left: 1129px;
+}
+
+#personagem7 {
+    top: 262px;
+    left: 1168px;
+}
+
+#personagem8 {
+    top: 927px;
+    left: 1345px;
+}
+
+/*****************************************************************************/
+/********************************* estilo modal *****************************/
+/***************************************************************************/
+
+.nome-personagem {
+    width: 302px;
+    height: 362px;
+    left: 524px;
+    top: 54px;
+}
+
+.h2-personagem {
+    font-family: 'Indie Flower', cursive;
+    font-size: 45px;
+    color: white;
+    text-shadow: black 0.1em 0.1em 0.2em
+}
+
+.descricao {
+    overflow: scroll;
+    width: 299px;
+    height: 362px;
+    left: 524px;
+    top: -287px;
+}
+
+.p-descricao {
+    font-family: 'Indie Flower', cursive;
+    /* color: #ffefea; */
+    font-size: 30px;
+}
+
+.tamanho {
+    width: 900px;
+    height: 576px;
+}
+
+.cor-bg {
+    background-color: #e8d59b;
+}
+
+.title-resumo {
+    font-family: 'Indie Flower', cursive;
+    background-color: #e1ba3b !important;
+    color: #302200;
+}
+
+.fechar {
+    width: 60px;
+    left: 790px;
+    top: -353px;
+}
+
+.fecha-resumo {
+    width: 60px;
+}
+
+.bg-marciana {
+    background: url(../Img/Marciana.png) no-repeat;
+}
+
+.bg-jeronimo {
+    background: url(../Img/Jeronimo.png) no-repeat;
+}
+
+.bg-paula {
+    background: url(../Img/Paula.png) no-repeat;
+}
+
+.bg-rita {
+    background: url(../Img/Rita_Baiana.png) no-repeat;
+}
+
+.bg-pombinha {
+    background: url(../Img/Pombinha.png) no-repeat;
+}
+
+.bg-joao {
+    background: url(../Img/Joao_Romao.png) no-repeat;
+}
+
+.bg-miranda {
+    background: url(../Img/Miranda.png) no-repeat;
+}
+
+.bg-bertoleza {
+    background: url(../Img/Bertoleza.png) no-repeat;
+}
