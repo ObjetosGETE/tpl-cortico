@@ -8,26 +8,26 @@ function resizeBodyCortico() {
   var proporcaoLargura = (larguraScreen * 100) / largura;
   var proporcao, larguraAltura, larguraAlturaAuto;
 
-  
-  if(proporcaoAltura < proporcaoLargura){
+
+  if (proporcaoAltura < proporcaoLargura) {
     larguraAltura = "height";
     larguraAlturaAuto = "width";
     proporcao = proporcaoAltura / 100;
-  }else{
+  } else {
     larguraAltura = "width";
     larguraAlturaAuto = "height";
     proporcao = proporcaoLargura / 100;
   }
   console.log(proporcao, proporcaoAltura, proporcaoLargura)
   $(".conteudo-cortico").css({
-    "transform": "scale("+proporcao+")",
+    "transform": "scale(" + proporcao + ")",
     "transform-origin": "center center"
   });
 }
 
 $(document).ready(function () {
   resizeBodyCortico()
-  $(window).resize(function() {
+  $(window).resize(function () {
     resizeBodyCortico()
   })
   $(".tela-inicial-cortico").hide();
@@ -93,14 +93,14 @@ const modalPersonagem = (params) => {
     <div class="modal-content">
     <div class="modal-body tamanho ${params.classPersonagem}">
     <div class="nome-personagem position-relative"><h2 class="h2-personagem"><strong>${params.nomePersonagem}</strong></h2></div>
-    <button type="button" class="sem-fundo fechar position-relative som btn-ampliar" data-bs-dismiss="modal" aria-label="Close"><img class="img-fluid som" src="./assets/Img/_06botao_fechar.png" alt="Botão para voltar na tela inicial"></button>
+    <button type="button" class="sem-fundo fechar position-relative som-fechar btn-ampliar" data-bs-dismiss="modal" aria-label="Close"><img class="img-fluid" src="./assets/Img/_06botao_fechar.png" alt="Botão para voltar na tela inicial"></button>
     <div class="descricao position-relative">
     <p class="p-descricao">${params.textPersonagem}</p>
     </div>
     </div>
-    </div>`
-  '</div>'
-  '</div>';
+    </div>
+  </div>
+  </div>`;
 
   $("#modal-cortico").html(modal);
   $("#modal").modal("show");
@@ -112,31 +112,54 @@ $(document).on("click", ".personagem", function (e) {
 });
 
 
-$('.som').click(function () {
-  var audio = new Audio('../assets/audio/clique.wav');
-  audio.play();
-});
-
-
-$(".estilo-menu").each(function () {
-  $(this).click(function () {
-    $("#personagem" + $(this).attr("data-target")).click();
-    $("#modal-menu").modal("hide");
+function abreViaMenu() {
+  $(".estilo-menu").each(function () {
+    $(this).click(function () {
+      $("#personagem" + $(this).attr("data-target")).click();
+      $("#modal-menu").modal("hide");
+    });
   });
-});
+}
 
-document.addEventListener('DOMContentLoaded', function () {
-  var myModal = new bootstrap.Modal(document.getElementById('modal-capa-glossario'), {
-    keyboard: false
+function modalAberta() {
+  document.addEventListener('DOMContentLoaded', function () {
+    var myModal = new bootstrap.Modal(document.getElementById('modal-capa-glossario'), {
+      keyboard: false
+    });
+    myModal.show();
+
+    $('.btn-capa').click(function () {
+      myModal.hide();
+    });
+
   });
-  myModal.show();
+}
 
-  $('.btn-capa').click(function () {
-    myModal.hide();
+function somClique() {
+  $('.som-fechar').click(function () {
+    var audio = new Audio('../assets/audio/som_modal.wav');
+    audio.play();
   });
+}
 
-});
+function somFechar() {
+  $('.som-clique').click(function () {
+    var audio = new Audio('../assets/audio/clique.wav');
+    audio.play();
+  });
+}
 
-$(document).ready(function() {
-  $('.efeito-logo').animate({opacity: '1'}, 7000); // Define a opacidade para 1 com animação de 1 segundo
-});
+function efeitoFade() {
+  $('.efeito-logo').animate({
+    opacity: '1'
+  }, 7000);
+  $('.efeito-bg').animate({
+    opacity: '1'
+  }, 10000);
+}
+
+abreViaMenu();
+modalAberta();
+efeitoFade();
+somFechar();
+somClique();

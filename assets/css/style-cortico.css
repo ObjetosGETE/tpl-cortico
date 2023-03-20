@@ -63,8 +63,8 @@
 /*************************************************************************************/
 
 .logo-cortico {
-	top: 118px;
-	left: 145px;
+    top: 118px;
+    left: 145px;
 }
 
 .personagem {
@@ -73,12 +73,23 @@
     border-radius: 50%;
     font-size: 20px;
     font-weight: bold;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     box-shadow: var(--sombrinha);
     padding: 0;
 }
 
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL'0,
+        'wght'400,
+        'GRAD'0,
+        'opsz'48,
+}
+
+.material-symbols-outlined {
+    padding: 6px;
+}
 
 /*****************************************************************************************/
 /********************************* estilo modal CAPA ************************************/
@@ -198,6 +209,7 @@
     width: 900px;
     height: 576px;
 }
+
 .fechar {
     width: 68px;
     left: 790px;
