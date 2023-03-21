@@ -317,3 +317,25 @@
     top: 927px;
     left: 1345px;
 }
+
+#modal-cortico .modal-dialog {
+    transform-origin: top center !important;
+}
+#modal-cortico .modal-content
+    {
+        color: white;
+        width: 902px;
+        max-width: unset;
+        margin: auto;
+        margin-top: auto;
+        top: 0px;
+        left: calc(50% - 450px);
+        margin-top: 20px;
+    }  
+    .conteudo-cortico, .logo-cortico {
+        opacity: 0;
+    }
+@media only screen and (max-width: 991px) {
+     
+
+}

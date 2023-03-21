@@ -8,7 +8,6 @@ function resizeBodyCortico() {
   var proporcaoLargura = (larguraScreen * 100) / largura;
   var proporcao, larguraAltura, larguraAlturaAuto;
 
-
   if (proporcaoAltura < proporcaoLargura) {
     larguraAltura = "height";
     larguraAlturaAuto = "width";
@@ -18,11 +17,18 @@ function resizeBodyCortico() {
     larguraAlturaAuto = "height";
     proporcao = proporcaoLargura / 100;
   }
+  
   console.log(proporcao, proporcaoAltura, proporcaoLargura)
-  $(".conteudo-cortico").css({
+
+  $(".correcao-adaptativa").css({
     "transform": "scale(" + proporcao + ")",
     "transform-origin": "center center"
   });
+
+  $("#modal-cortico .modal-dialog.correcao-adaptativa").css({
+    "transform": "scale(" + 0.9 + ")",
+    "transform-origin": "center top"
+  })
 }
 
 $(document).ready(function () {
@@ -30,12 +36,21 @@ $(document).ready(function () {
   $(window).resize(function () {
     resizeBodyCortico()
   })
-  $(".tela-inicial-cortico").hide();
 
-  $('.btn-capa').click(function () {
-    $(".capa").hide();
-    $(".tela-inicial-cortico").show();
-  });
+  $(".conteudo-cortico").delay(500).animate({
+		"opacity":"1",
+
+}, "slow", function(){
+$('.efeito-logo').animate({
+    opacity: '1'
+ }, 1000);
+})
+//  $(".tela-inicial-cortico").hide();
+
+  // $('.btn-capa').click(function () {
+  //   $(".capa").hide();
+  //   $(".tela-inicial-cortico").show();
+  // });
 
 });
 
@@ -89,7 +104,7 @@ const cortico = (params) => {
 const modalPersonagem = (params) => {
   var modal =
     `<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog correcao-adaptativa" role="document">
     <div class="modal-content">
     <div class="modal-body tamanho ${params.classPersonagem}">
     <div class="nome-personagem position-relative"><h2 class="h2-personagem"><strong>${params.nomePersonagem}</strong></h2></div>
@@ -104,12 +119,19 @@ const modalPersonagem = (params) => {
 
   $("#modal-cortico").html(modal);
   $("#modal").modal("show");
+
+  resizeBodyCortico();
 }
 
 
 $(document).on("click", ".personagem", function (e) {
   modalPersonagem(cortico($(this).attr("id")));
 });
+
+
+
+
+
 
 
 function abreViaMenu() {
@@ -121,19 +143,22 @@ function abreViaMenu() {
   });
 }
 
-function modalAberta() {
-  document.addEventListener('DOMContentLoaded', function () {
-    var myModal = new bootstrap.Modal(document.getElementById('modal-capa-glossario'), {
-      keyboard: false
-    });
-    myModal.show();
+// function modalAberta() {
+//   document.addEventListener('DOMContentLoaded', function () {
+//     var myModal = new bootstrap.Modal(document.getElementById('modal-capa-glossario'), {
+//       keyboard: false
+//     });
+//     myModal.show();
 
-    $('.btn-capa').click(function () {
-      myModal.hide();
-    });
+//     $('.btn-capa').click(function () {
+//       myModal.hide();
+      
+      
+    
+//     });
 
-  });
-}
+//   });
+// }
 
 function somClique() {
   $('.som-fechar').click(function () {
@@ -149,17 +174,17 @@ function somFechar() {
   });
 }
 
-function efeitoFade() {
-  $('.efeito-logo').animate({
-    opacity: '1'
-  }, 7000);
-  $('.efeito-bg').animate({
-    opacity: '1'
-  }, 10000);
-}
+// function efeitoFade() {
+//   $('.efeito-logo').animate({
+//     opacity: '1'
+//   }, 7000);
+//   $('.efeito-bg').animate({
+//     opacity: '1'
+//   }, 10000);
+// }
 
 abreViaMenu();
-modalAberta();
-efeitoFade();
+// modalAberta();
+// efeitoFade();
 somFechar();
 somClique();
