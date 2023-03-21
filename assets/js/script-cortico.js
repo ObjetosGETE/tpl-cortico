@@ -138,12 +138,6 @@ $(document).on("click", ".personagem", function (e) {
   modalPersonagem(cortico($(this).attr("id")));
 });
 
-
-
-
-
-
-
 function abreViaMenu() {
   $(".estilo-menu").each(function () {
     $(this).click(function () {
@@ -171,14 +165,14 @@ function abreViaMenu() {
 // }
 
 function somClique() {
-  $('.som-fechar').click(function () {
+  $("body").on("click", '.som-fechar', function () {
     var audio = new Audio('../assets/audio/som_modal.wav');
     audio.play();
   });
 }
 
 function somFechar() {
-  $('.som-clique').click(function () {
+  $("body").on("click", '.som-clique', function () {
     var audio = new Audio('../assets/audio/clique.wav');
     audio.play();
   });
