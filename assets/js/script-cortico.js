@@ -1,6 +1,4 @@
-function resizeBodyCortico() {
-  var largura = 1920;
-  var altura = 1080;
+function proportionScale(largura, altura){
 
   var larguraScreen = $(window).width();
   var alturaScreen = $(window).height();
@@ -17,17 +15,29 @@ function resizeBodyCortico() {
     larguraAlturaAuto = "height";
     proporcao = proporcaoLargura / 100;
   }
-  
+
   console.log(proporcao, proporcaoAltura, proporcaoLargura)
+  return [proporcao, larguraAltura, larguraAlturaAuto];
+}
+
+function resizeBodyCortico() {
+
+  var proporcao1920 = proportionScale(1920, 1080)[0];
 
   $(".correcao-adaptativa").css({
-    "transform": "scale(" + proporcao + ")",
+    "transform": "scale(" + proporcao1920 + ")",
     "transform-origin": "center center"
   });
 
+  var proporcao900;
+
+  if ($(window).width() < 992){
+    proporcao900 = proportionScale(900, 576)[0];
+  }else{
+    proporcao900 = 1;
+  }
   $("#modal-cortico .modal-dialog.correcao-adaptativa").css({
-    "transform": "scale(" + 0.9 + ")",
-    "transform-origin": "center top"
+    "transform": "scale(" + proporcao900 + ")"
   })
 }
 

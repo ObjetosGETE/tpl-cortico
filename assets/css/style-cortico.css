@@ -26,6 +26,10 @@
     position: relative;
 }
 
+#modal-cortico .modal {
+    overflow: hidden;
+}
+
 .conteudo-cortico {
     width: 1920px;
     height: 1080px;
@@ -319,7 +323,9 @@
 }
 
 #modal-cortico .modal-dialog {
-    transform-origin: top center !important;
+    transform-origin: center center !important;
+    margin-top: 0px;
+    top: calc(50% - (576px / 2));
 }
 #modal-cortico .modal-content
     {
@@ -330,7 +336,7 @@
         margin-top: auto;
         top: 0px;
         left: calc(50% - 450px);
-        margin-top: 20px;
+        margin-top: 0px;
     }  
     .conteudo-cortico, .logo-cortico {
         opacity: 0;
