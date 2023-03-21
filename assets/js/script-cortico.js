@@ -1,4 +1,4 @@
-function proportionScale(largura, altura){
+function proportionScale(largura, altura) {
 
   var larguraScreen = $(window).width();
   var alturaScreen = $(window).height();
@@ -31,9 +31,9 @@ function resizeBodyCortico() {
 
   var proporcao900;
 
-  if ($(window).width() < 992){
+  if ($(window).width() < 992) {
     proporcao900 = proportionScale(900, 576)[0];
-  }else{
+  } else {
     proporcao900 = 1;
   }
   $("#modal-cortico .modal-dialog.correcao-adaptativa").css({
@@ -48,19 +48,13 @@ $(document).ready(function () {
   })
 
   $(".conteudo-cortico").delay(500).animate({
-		"opacity":"1",
+    "opacity": "1",
 
-}, "slow", function(){
-$('.efeito-logo').animate({
-    opacity: '1'
- }, 1000);
-})
-//  $(".tela-inicial-cortico").hide();
-
-  // $('.btn-capa').click(function () {
-  //   $(".capa").hide();
-  //   $(".tela-inicial-cortico").show();
-  // });
+  }, "slow", function () {
+    $('.efeito-logo').animate({
+      opacity: '1'
+    }, 1000);
+  })
 
 });
 
@@ -147,23 +141,6 @@ function abreViaMenu() {
   });
 }
 
-// function modalAberta() {
-//   document.addEventListener('DOMContentLoaded', function () {
-//     var myModal = new bootstrap.Modal(document.getElementById('modal-capa-glossario'), {
-//       keyboard: false
-//     });
-//     myModal.show();
-
-//     $('.btn-capa').click(function () {
-//       myModal.hide();
-      
-      
-    
-//     });
-
-//   });
-// }
-
 function somClique() {
   $("body").on("click", '.som-fechar', function () {
     var audio = new Audio('../assets/audio/som_modal.wav');
@@ -178,17 +155,22 @@ function somFechar() {
   });
 }
 
-// function efeitoFade() {
-//   $('.efeito-logo').animate({
-//     opacity: '1'
-//   }, 7000);
-//   $('.efeito-bg').animate({
-//     opacity: '1'
-//   }, 10000);
-// }
+$(document).ready(function () {
+  var meuAudio = $('#meuAudio')[0];
+
+  $('#meuBotao').click(function () {
+    var icone = $('#meuBotao').find('i');
+    if (icone.text() === 'volume_up') {
+      icone.text('volume_off');
+      meuAudio.volume = 0.9;
+      meuAudio.play();
+    } else {
+      icone.text('volume_up');
+      meuAudio.pause();
+    }
+  });
+});
 
 abreViaMenu();
-// modalAberta();
-// efeitoFade();
 somFechar();
 somClique();

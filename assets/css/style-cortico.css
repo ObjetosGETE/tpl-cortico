@@ -19,9 +19,11 @@
 /********************************************************************************/
 /********************************* estilo geral ********************************/
 /******************************************************************************/
-html, body {
+html,
+body {
     height: 100%;
 }
+
 .body-cortico {
     overflow: hidden;
     background-color: var(--cor-body);
@@ -40,8 +42,6 @@ html, body {
     top: calc(50% - 1080px / 2);
     margin: auto;
 }
-
-
 
 .sem-fundo {
     background-color: transparent;
@@ -129,7 +129,7 @@ html, body {
     max-width: 70% !important;
     height: auto;
     display: block;
-    }
+}
 
 @media only screen and (orientation: portrait) {
     .modo-smart {
@@ -147,7 +147,7 @@ html, body {
         background-color: #7c88e7;
         z-index: 9999999999999999999;
     }
-    }
+}
 
 @media (min-width: 480px) {
     .modo-smart {
@@ -196,6 +196,10 @@ html, body {
     width: 13%;
     top: 58px;
     left: 1334px;
+}
+
+.btn.estilo-menu.mb-2.form-control {
+    font-size: 30px;
 }
 
 .modal-header.menuzinho {
@@ -265,6 +269,30 @@ html, body {
     left: 524px;
     top: -287px;
 }
+
+#modal-cortico .modal-dialog {
+    transform-origin: center center !important;
+    margin-top: 0px;
+    top: calc(50% - (576px / 2));
+}
+
+#modal-cortico .modal-content {
+    color: white;
+    width: 902px;
+    max-width: unset;
+    margin: auto;
+    margin-top: auto;
+    top: 0px;
+    left: calc(50% - 450px);
+    margin-top: 0px;
+}
+
+.conteudo-cortico,
+.logo-cortico {
+    opacity: 0;
+}
+
+@media only screen and (max-width: 991px) {}
 
 .bg-introducao {
     background: url(../Img/Modal_introducao.png) no-repeat;
@@ -344,28 +372,4 @@ html, body {
 #personagem8 {
     top: 927px;
     left: 1345px;
-}
-
-#modal-cortico .modal-dialog {
-    transform-origin: center center !important;
-    margin-top: 0px;
-    top: calc(50% - (576px / 2));
-}
-#modal-cortico .modal-content
-    {
-        color: white;
-        width: 902px;
-        max-width: unset;
-        margin: auto;
-        margin-top: auto;
-        top: 0px;
-        left: calc(50% - 450px);
-        margin-top: 0px;
-    }  
-    .conteudo-cortico, .logo-cortico {
-        opacity: 0;
-    }
-@media only screen and (max-width: 991px) {
-     
-
 }
