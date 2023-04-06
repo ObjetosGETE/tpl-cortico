@@ -112,7 +112,7 @@ const modalPersonagem = (params) => {
     <div class="modal-content">
     <div class="modal-body tamanho ${params.classPersonagem}">
     <div class="nome-personagem position-relative"><h2 class="h2-personagem"><strong>${params.nomePersonagem}</strong></h2></div>
-    <button type="button" class="sem-fundo fechar position-relative som-fechar btn-ampliar" data-bs-dismiss="modal" aria-label="Close"><img class="img-fluid" src="./assets/Img/_06botao_fechar.png" alt="Botão para voltar na tela inicial"></button>
+    <button type="button" class="sem-fundo fechar position-relative som-fechar btn-ampliar" data-bs-dismiss="modal" aria-label="Close"><img class="img-fluid" src="assets/Img/_06botao_fechar.png" alt="Botão para voltar na tela inicial"></button>
     <div class="descricao position-relative">
     <p class="p-descricao">${params.textPersonagem}</p>
     </div>
@@ -143,14 +143,14 @@ function abreViaMenu() {
 
 function somClique() {
   $("body").on("click", '.som-fechar', function () {
-    var audio = new Audio('../assets/audio/som_modal.wav');
+    var audio = new Audio('assets/audio/som_modal.mp3');
     audio.play();
   });
 }
 
 function somFechar() {
   $("body").on("click", '.som-clique', function () {
-    var audio = new Audio('../assets/audio/clique.wav');
+    var audio = new Audio('assets/audio/clique.mp3');
     audio.play();
   });
 }
@@ -160,12 +160,12 @@ $(document).ready(function () {
 
   $('#meuBotao').click(function () {
     var icone = $('#meuBotao').find('i');
-    if (icone.text() === 'volume_up') {
-      icone.text('volume_off');
+    if (icone.text() === 'volume_off') {
+      icone.text('volume_up');
       meuAudio.volume = 0.9;
       meuAudio.play();
     } else {
-      icone.text('volume_up');
+      icone.text('volume_off');
       meuAudio.pause();
     }
   });
